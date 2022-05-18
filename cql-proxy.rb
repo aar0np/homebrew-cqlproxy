@@ -12,7 +12,6 @@ class CqlProxy < Formula
   end
 
   test do
-    assert_match true, strings.HasPrefix(shell_output("./cql-proxy"),
-      "cql-proxy: error: must provide either bundle path or contact points")
+    assert_match "astra-bundle", shell_output("cql-proxy --help 2>&1")
   end
 end
